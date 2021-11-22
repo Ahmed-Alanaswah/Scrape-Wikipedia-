@@ -11,14 +11,14 @@ def get_citations_needed_count(URL):
     citationNeeded= soup.find_all('a',title="Wikipedia:Citation needed")
     return len(citationNeeded)
 
-newArr=[]
+Arr=[]
 def get_citations_needed_report(URL):
    
     citationNeeded= soup.find_all('a',title="Wikipedia:Citation needed")
     for i in citationNeeded:
-        newArr.append(i.parent.parent.parent.get_text())
+        Arr.append(i.parent.parent.parent.get_text())
 
-    return "\n".join(newArr)
+    return "\n".join(Arr)
 
 print(get_citations_needed_count(URL))
 print(get_citations_needed_report(URL))
